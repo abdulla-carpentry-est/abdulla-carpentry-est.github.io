@@ -55,6 +55,9 @@
       background: #111;
       color: #fff;
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .topbar-inner {
@@ -64,6 +67,21 @@
       gap: 20px;
       padding: 14px 0;
       flex-wrap: wrap;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: transparent;
+      padding: 2px;
     }
 
     .brand {
@@ -85,11 +103,16 @@
     .nav a {
       color: #f2f2f2;
       font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
     }
 
     .hero {
       background:
-        linear-gradient(rgba(10,10,10,0.82), rgba(10,10,10,0.82)),
+        linear-gradient(rgba(10,10,10,0.84), rgba(10,10,10,0.84)),
         radial-gradient(circle at top right, rgba(200,169,107,0.18), transparent 30%),
         linear-gradient(135deg, #121212 0%, #0a0a0a 100%);
       color: #fff;
@@ -112,6 +135,25 @@
       font-size: 13px;
       margin-bottom: 18px;
       letter-spacing: 0.2px;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hero-brand img {
+      width: 86px;
+      height: 86px;
+      object-fit: contain;
+    }
+
+    .hero-brand-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
     }
 
     h1 {
@@ -161,6 +203,7 @@
 
     .btn-secondary:hover {
       border-color: rgba(255,255,255,0.45);
+      color: var(--gold);
     }
 
     .hero-points {
@@ -396,27 +439,127 @@
       color: #fff;
     }
 
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+    .premium-portfolio-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .social-link {
+    .premium-portfolio-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #fbf8f2 100%);
+      border: 1px solid #eadfce;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .premium-portfolio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+      border-color: #d9bf8c;
+    }
+
+    .premium-portfolio-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #c8a96b 0%, #e2c78f 100%);
+    }
+
+    .premium-portfolio-card h3 {
+      min-height: 58px;
+    }
+
+    .portfolio-main-card {
+      background: linear-gradient(135deg, #171717 0%, #0f0f10 100%);
+      border: 1px solid rgba(200,169,107,0.30);
+    }
+
+    .portfolio-main-card h3,
+    .portfolio-main-card p,
+    .portfolio-main-card .project-link {
+      color: #fff;
+    }
+
+    .portfolio-main-card .tag {
+      background: rgba(200,169,107,0.16);
+      color: #d9bf8c;
+      border: 1px solid rgba(200,169,107,0.35);
+    }
+
+    .project-link {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 14px 18px;
+      margin-top: 12px;
+      padding: 12px 16px;
       border-radius: 12px;
-      background: #f3ede3;
-      border: 1px solid #eadcc2;
-      color: #111;
+      background: #111;
+      color: #fff;
       font-weight: 700;
       transition: 0.2s ease;
     }
 
-    .social-link:hover {
-      background: #eadcc2;
+    .project-link:hover {
+      background: #c8a96b;
+      color: #111;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 120px;
+      padding: 22px 20px;
+      border-radius: 18px;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .social-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.16);
+    }
+
+    .social-name {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .social-handle {
+      font-size: 13px;
+      opacity: 0.92;
+      font-weight: 600;
+    }
+
+    .social-facebook {
+      background: linear-gradient(135deg, #1877f2 0%, #0f5ec9 100%);
+    }
+
+    .social-instagram {
+      background: linear-gradient(135deg, #833ab4 0%, #e1306c 55%, #f77737 100%);
+    }
+
+    .social-x {
+      background: linear-gradient(135deg, #111111 0%, #333333 100%);
+    }
+
+    .social-pinterest {
+      background: linear-gradient(135deg, #e60023 0%, #b8001c 100%);
+    }
+
+    .social-linkedin {
+      background: linear-gradient(135deg, #0a66c2 0%, #084b8f 100%);
     }
 
     .whatsapp-float {
@@ -469,7 +612,9 @@
       .service-grid,
       .portfolio-grid,
       .trust-grid,
-      .areas-grid {
+      .areas-grid,
+      .premium-portfolio-grid,
+      .social-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -483,7 +628,9 @@
       .portfolio-grid,
       .trust-grid,
       .areas-grid,
-      .hero-points {
+      .hero-points,
+      .premium-portfolio-grid,
+      .social-grid {
         grid-template-columns: 1fr;
       }
 
@@ -499,6 +646,15 @@
       .hero {
         padding: 70px 0 56px;
       }
+
+      .hero-brand {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-wrap {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -506,7 +662,10 @@
 
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">Abdulla Carpentry <span>EST</span></div>
+      <div class="brand-wrap">
+        <img src="ace-logo.png" alt="ACE Logo" class="brand-logo">
+        <div class="brand">Abdulla Carpentry <span>EST</span></div>
+      </div>
       <div class="nav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -522,6 +681,12 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Dubai-Based Fit-Out & Renovation Company</div>
+
+        <div class="hero-brand">
+          <img src="ace-logo.png" alt="ACE Abdulla Carpentry EST Logo">
+          <div class="hero-brand-text">Abdulla Carpentry EST</div>
+        </div>
+
         <h1>Premium Interior Fit-Out, Renovation & Custom Carpentry Solutions</h1>
         <p>
           Abdulla Carpentry EST delivers residential and commercial interior solutions across Dubai,
@@ -657,99 +822,99 @@
   </section>
 
   <section id="portfolio">
-  <div class="container">
-    <h2 class="section-title">Abdulla Carpentry Portfolio</h2>
-    <p class="section-subtitle">
-      Explore selected fit-out, renovation, remodeling and specialist interior projects completed across Dubai communities, residential spaces and commercial locations.
-    </p>
+    <div class="container">
+      <h2 class="section-title">Abdulla Carpentry Portfolio</h2>
+      <p class="section-subtitle">
+        Explore selected fit-out, renovation, remodeling and specialist interior projects completed across Dubai communities, residential spaces and commercial locations.
+      </p>
 
-    <div class="portfolio-grid premium-portfolio-grid">
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Villa Renovation</div>
-        <h3>Luxury Villa Renovation in Jumeirah Golf Estates</h3>
-        <p>Dining room fit-out and renovation work in a premium villa environment with refined detailing and upgraded interior finishing.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/dining-room-fitout-dubai-jumeirah-golf-estates/" target="_blank">View Project →</a>
-      </div>
+      <div class="portfolio-grid premium-portfolio-grid">
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Villa Renovation</div>
+          <h3>Luxury Villa Renovation in Jumeirah Golf Estates</h3>
+          <p>Dining room fit-out and renovation work in a premium villa environment with refined detailing and upgraded interior finishing.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/dining-room-fitout-dubai-jumeirah-golf-estates/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Apartment Renovation</div>
-        <h3>Complete Apartment Renovation in JLT Dubai</h3>
-        <p>Apartment transformation project covering upgraded interiors, improved finishing and coordinated renovation execution in JLT.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/apartment-renovation-in-jlt-dubai/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Apartment Renovation</div>
+          <h3>Complete Apartment Renovation in JLT Dubai</h3>
+          <p>Apartment transformation project covering upgraded interiors, improved finishing and coordinated renovation execution in JLT.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/apartment-renovation-in-jlt-dubai/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Villa Renovation</div>
-        <h3>Arabian Ranches Azalea Villa Renovation Dubai</h3>
-        <p>Villa renovation project in Arabian Ranches Azalea with practical upgrades, custom interior work and premium finishing support.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/arabian-ranches-azalea-villa-renovation/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Villa Renovation</div>
+          <h3>Arabian Ranches Azalea Villa Renovation Dubai</h3>
+          <p>Villa renovation project in Arabian Ranches Azalea with practical upgrades, custom interior work and premium finishing support.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/arabian-ranches-azalea-villa-renovation/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Study Room Fit-Out</div>
-        <h3>Study Room Fit-Out & Renovation in Victory Heights Dubai</h3>
-        <p>Dedicated study room transformation with improved layout, practical design support and refined interior finishing.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/study-room-fit-out-renovation-victory-heights/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Study Room Fit-Out</div>
+          <h3>Study Room Fit-Out & Renovation in Victory Heights Dubai</h3>
+          <p>Dedicated study room transformation with improved layout, practical design support and refined interior finishing.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/study-room-fit-out-renovation-victory-heights/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Laundry Remodeling</div>
-        <h3>Laundry Remodeling Services in Meadows 9</h3>
-        <p>Laundry area remodeling focused on better usability, upgraded detailing and cleaner functional space planning.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/laundry-remodeling-meadows-9/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Laundry Remodeling</div>
+          <h3>Laundry Remodeling Services in Meadows 9</h3>
+          <p>Laundry area remodeling focused on better usability, upgraded detailing and cleaner functional space planning.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/laundry-remodeling-meadows-9/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Kitchen Remodeling</div>
-        <h3>Kitchen Remodeling in DAMAC Hills 2 Dubai</h3>
-        <p>Kitchen renovation and remodeling work with improved layout, upgraded finishes and practical residential interior execution.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/kitchen-remodeling-damac-hills-2/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Kitchen Remodeling</div>
+          <h3>Kitchen Remodeling in DAMAC Hills 2 Dubai</h3>
+          <p>Kitchen renovation and remodeling work with improved layout, upgraded finishes and practical residential interior execution.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/kitchen-remodeling-damac-hills-2/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Bathroom Remodeling</div>
-        <h3>Bathroom Remodeling in DAMAC Hills Dubai</h3>
-        <p>Bathroom upgrade project focused on improved finishes, cleaner detailing and practical remodeling execution.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/bathroom-remodeling-damac-hills/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Bathroom Remodeling</div>
+          <h3>Bathroom Remodeling in DAMAC Hills Dubai</h3>
+          <p>Bathroom upgrade project focused on improved finishes, cleaner detailing and practical remodeling execution.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/bathroom-remodeling-damac-hills/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Clinic Remodeling</div>
-        <h3>Clinic Remodeling | DNA GTx, Dubai Healthcare City</h3>
-        <p>Room partition and door manufacturing works for a clinic remodeling project in Dubai Healthcare City.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/clinic-remodeling-dubai-healthcare-city/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Clinic Remodeling</div>
+          <h3>Clinic Remodeling | DNA GTx, Dubai Healthcare City</h3>
+          <p>Room partition and door manufacturing works for a clinic remodeling project in Dubai Healthcare City.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/clinic-remodeling-dubai-healthcare-city/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Wall Paneling</div>
-        <h3>Expert Wall Paneling Works at Al Bateen Residences, JBR</h3>
-        <p>Specialist wall paneling installation and interior detailing project in a premium residential tower setting.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/wall-paneling-bateen-residences-jbr/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Wall Paneling</div>
+          <h3>Expert Wall Paneling Works at Al Bateen Residences, JBR</h3>
+          <p>Specialist wall paneling installation and interior detailing project in a premium residential tower setting.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/wall-paneling-bateen-residences-jbr/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Office Fit-Out</div>
-        <h3>Office Fit-Out & Renovation in Business Bay (Iris Bay)</h3>
-        <p>Commercial office renovation and fit-out project designed for better workflow, professional finishing and practical use.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/office-renovation-in-business-bay/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Office Fit-Out</div>
+          <h3>Office Fit-Out & Renovation in Business Bay (Iris Bay)</h3>
+          <p>Commercial office renovation and fit-out project designed for better workflow, professional finishing and practical use.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/office-renovation-in-business-bay/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card">
-        <div class="tag">Retail Fit-Out</div>
-        <h3>Shop Fit-Out & Renovation in BurJuman Mall, Dubai</h3>
-        <p>Retail shop fit-out and renovation project within a major Dubai mall environment with commercial execution support.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/shop-fit-out-renovation-burjuman-mall-dubai/" target="_blank">View Project →</a>
-      </div>
+        <div class="card portfolio-card premium-portfolio-card">
+          <div class="tag">Retail Fit-Out</div>
+          <h3>Shop Fit-Out & Renovation in BurJuman Mall, Dubai</h3>
+          <p>Retail shop fit-out and renovation project within a major Dubai mall environment with commercial execution support.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/shop-fit-out-renovation-burjuman-mall-dubai/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="card portfolio-card premium-portfolio-card portfolio-main-card">
-        <div class="tag">Full Portfolio</div>
-        <h3>Explore More Abdulla Carpentry Projects</h3>
-        <p>Browse more fit-out, renovation, joinery, remodeling and interior transformation projects completed across Dubai.</p>
-        <a class="project-link" href="https://abdullacarpentryest.ae/our-portfolio/" target="_blank">Visit Full Portfolio →</a>
+        <div class="card portfolio-card premium-portfolio-card portfolio-main-card">
+          <div class="tag">Full Portfolio</div>
+          <h3>Explore More Abdulla Carpentry Projects</h3>
+          <p>Browse more fit-out, renovation, joinery, remodeling and interior transformation projects completed across Dubai.</p>
+          <a class="project-link" href="https://abdullacarpentryest.ae/our-portfolio/" target="_blank">Visit Full Portfolio →</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="blogs">
     <div class="container">
@@ -815,40 +980,40 @@
   </section>
 
   <section id="socials">
-  <div class="container">
-    <h2 class="section-title">Connect With Abdulla Carpentry EST</h2>
-    <p class="section-subtitle">
-      Follow our latest projects, renovation ideas, fit-out updates and brand presence across social platforms.
-    </p>
+    <div class="container">
+      <h2 class="section-title">Connect With Abdulla Carpentry EST</h2>
+      <p class="section-subtitle">
+        Follow our latest projects, renovation ideas, fit-out updates and brand presence across social platforms.
+      </p>
 
-    <div class="social-grid">
-      <a class="social-card social-facebook" href="https://www.facebook.com/AbdullaCarpentryEST/" target="_blank">
-        <span class="social-name">Facebook</span>
-        <span class="social-handle">AbdullaCarpentryEST</span>
-      </a>
+      <div class="social-grid">
+        <a class="social-card social-facebook" href="https://www.facebook.com/AbdullaCarpentryEST/" target="_blank">
+          <span class="social-name">Facebook</span>
+          <span class="social-handle">AbdullaCarpentryEST</span>
+        </a>
 
-      <a class="social-card social-instagram" href="https://www.instagram.com/abdullacarpentryest/" target="_blank">
-        <span class="social-name">Instagram</span>
-        <span class="social-handle">@abdullacarpentryest</span>
-      </a>
+        <a class="social-card social-instagram" href="https://www.instagram.com/abdullacarpentryest/" target="_blank">
+          <span class="social-name">Instagram</span>
+          <span class="social-handle">@abdullacarpentryest</span>
+        </a>
 
-      <a class="social-card social-x" href="https://x.com/AbdullaCEDubai" target="_blank">
-        <span class="social-name">X</span>
-        <span class="social-handle">@AbdullaCEDubai</span>
-      </a>
+        <a class="social-card social-x" href="https://x.com/AbdullaCEDubai" target="_blank">
+          <span class="social-name">X</span>
+          <span class="social-handle">@AbdullaCEDubai</span>
+        </a>
 
-      <a class="social-card social-pinterest" href="https://www.pinterest.com/AbdullaCarpentryEST/" target="_blank">
-        <span class="social-name">Pinterest</span>
-        <span class="social-handle">AbdullaCarpentryEST</span>
-      </a>
+        <a class="social-card social-pinterest" href="https://www.pinterest.com/AbdullaCarpentryEST/" target="_blank">
+          <span class="social-name">Pinterest</span>
+          <span class="social-handle">AbdullaCarpentryEST</span>
+        </a>
 
-      <a class="social-card social-linkedin" href="https://www.linkedin.com/company/abdulla-carpentry-est/" target="_blank">
-        <span class="social-name">LinkedIn</span>
-        <span class="social-handle">Abdulla Carpentry EST</span>
-      </a>
+        <a class="social-card social-linkedin" href="https://www.linkedin.com/company/abdulla-carpentry-est/" target="_blank">
+          <span class="social-name">LinkedIn</span>
+          <span class="social-handle">Abdulla Carpentry EST</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="cta-section" id="contact">
     <div class="container">
