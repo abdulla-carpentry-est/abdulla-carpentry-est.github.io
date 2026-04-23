@@ -3,136 +3,752 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdulla Carpentry EST | Fit-Out & Renovation in Dubai</title>
-  <meta name="description" content="Abdulla Carpentry EST provides fit-out, renovation, joinery, gypsum works, flooring, ceiling solutions, kitchen remodeling, bathroom renovation, and custom interior services in Dubai." />
+  <title>Abdulla Carpentry EST | Fit-Out, Renovation & Interior Solutions in Dubai</title>
+  <meta name="description" content="Abdulla Carpentry EST is a Dubai-based fit-out and renovation company offering villa renovation, apartment renovation, office fit-out, retail interiors, joinery, gypsum works, flooring, wall paneling, upholstery, painting, and custom interior solutions." />
   <style>
+    :root {
+      --bg: #f6f3ee;
+      --card: #ffffff;
+      --text: #1b1b1b;
+      --muted: #666666;
+      --dark: #0f0f10;
+      --gold: #c8a96b;
+      --gold-dark: #a98748;
+      --border: #e8e1d6;
+      --shadow: 0 12px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      color: #222;
-      background: #f5f5f5;
+      color: var(--text);
+      background: var(--bg);
     }
-    header {
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
       background: #111;
       color: #fff;
-      padding: 70px 20px;
-      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 40px;
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 0;
+      flex-wrap: wrap;
     }
-    header p {
-      margin: 0 0 20px;
-      font-size: 18px;
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
     }
-    .btn {
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #f2f2f2;
+      font-size: 14px;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(10,10,10,0.82), rgba(10,10,10,0.82)),
+        radial-gradient(circle at top right, rgba(200,169,107,0.18), transparent 30%),
+        linear-gradient(135deg, #121212 0%, #0a0a0a 100%);
+      color: #fff;
+      padding: 88px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
       display: inline-block;
-      padding: 12px 22px;
-      background: #fff;
+      padding: 8px 14px;
+      border: 1px solid rgba(200,169,107,0.45);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 54px;
+      line-height: 1.08;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #e6e1d8;
+      margin: 0 0 26px;
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
       color: #111;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 20px;
+
+    .btn-primary:hover {
+      background: var(--gold-dark);
     }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .hero-point {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #f5f2eb;
+      font-size: 14px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 26px;
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: 22px;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #ebe4d7;
+    }
+
+    .hero-card li {
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin: 0 0 10px;
+      color: #111;
+    }
+
+    .section-subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
     .card {
-      background: #fff;
-      padding: 30px;
-      margin-bottom: 20px;
-      border-radius: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
-    h2 {
-      margin-top: 0;
-      color: #111;
+
+    .intro-grid,
+    .cta-grid,
+    .blog-grid,
+    .portfolio-grid,
+    .service-grid,
+    .trust-grid,
+    .areas-grid {
+      display: grid;
+      gap: 20px;
     }
-    ul {
-      padding-left: 20px;
+
+    .intro-grid {
+      grid-template-columns: 1.15fr 0.85fr;
     }
-    footer {
+
+    .trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
       text-align: center;
-      padding: 25px 20px;
-      color: #666;
+      padding: 24px 18px;
     }
-    a {
+
+    .trust-item strong {
+      display: block;
+      font-size: 28px;
       color: #111;
+      margin-bottom: 6px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card h3,
+    .portfolio-card h3,
+    .blog-card h3,
+    .areas-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .service-card ul,
+    .areas-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .service-card li,
+    .areas-card li {
+      margin-bottom: 9px;
+      color: #333;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio-card p,
+    .blog-card p,
+    .service-card p,
+    .areas-card p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .mini-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .featured-blog {
+      background: linear-gradient(135deg, #171717 0%, #0e0e0e 100%);
+      color: #fff;
+      border: 1px solid rgba(200,169,107,0.28);
+    }
+
+    .featured-blog .tag,
+    .blog-card .tag,
+    .portfolio-card .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .featured-blog .tag {
+      background: rgba(200,169,107,0.18);
+      color: var(--gold);
+      border: 1px solid rgba(200,169,107,0.35);
+    }
+
+    .blog-card .tag,
+    .portfolio-card .tag {
+      background: #f3ede3;
+      color: #6c5328;
+      border: 1px solid #eadcc2;
+    }
+
+    .featured-blog h3 {
+      color: #fff;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .featured-blog p {
+      color: #e7e0d4;
+    }
+
+    .areas-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-section {
+      padding-bottom: 50px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #151515 0%, #0f0f10 100%);
+      color: #fff;
+      border: 1px solid rgba(200,169,107,0.28);
+    }
+
+    .cta-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 34px;
+      color: #fff;
+    }
+
+    .cta-box p {
+      color: #e8e1d6;
+      margin-bottom: 0;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    footer {
+      background: #101010;
+      color: #ded6ca;
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ded6ca;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .intro-grid,
+      .cta-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .trust-grid,
+      .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .service-grid,
+      .portfolio-grid,
+      .trust-grid,
+      .areas-grid,
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .section-title,
+      .cta-box h2 {
+        font-size: 28px;
+      }
+
+      .hero {
+        padding: 70px 0 56px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Abdulla Carpentry EST</h1>
-    <p>Dubai-Based Fit-Out, Renovation & Custom Interior Solutions</p>
-    <a class="btn" href="https://abdullacarpentryest.ae/" target="_blank">Visit Main Website</a>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Abdulla Carpentry <span>EST</span></div>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Dubai-Based Fit-Out & Renovation Company</div>
+        <h1>Premium Interior Fit-Out, Renovation & Custom Carpentry Solutions</h1>
+        <p>
+          Abdulla Carpentry EST delivers residential and commercial interior solutions across Dubai,
+          combining practical execution, clean finishing, custom joinery, and professional project handling.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://abdullacarpentryest.ae/" target="_blank">Visit Main Website</a>
+          <a class="btn btn-secondary" href="https://abdullacarpentryest.ae/blog/dubai-renovation-cost-guide-2026/" target="_blank">Read Renovation Cost Guide</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="hero-point">One contractor for complete fit-out and renovation work</div>
+          <div class="hero-point">Residential and commercial project experience</div>
+          <div class="hero-point">Custom joinery, gypsum, flooring, painting, upholstery and more</div>
+          <div class="hero-point">Clear timelines, practical execution and professional finishing</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Core Expertise</h3>
+        <ul>
+          <li>Villa and apartment renovation</li>
+          <li>Office, retail, salon and gym fit-out</li>
+          <li>Kitchen and bathroom remodeling</li>
+          <li>Furniture making and upholstery</li>
+          <li>Wall paneling, painting, flooring and ceiling works</li>
+        </ul>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <h2>About Us</h2>
-      <p>
-        Abdulla Carpentry EST is a Dubai-based fit-out and renovation company serving residential and commercial clients.
-        We provide practical, clean, and professionally finished interior solutions tailored to project needs.
+  <section>
+    <div class="container">
+      <div class="trust-grid">
+        <div class="card trust-item">
+          <strong>Dubai</strong>
+          <span>Local project focus</span>
+        </div>
+        <div class="card trust-item">
+          <strong>Residential</strong>
+          <span>Homes, villas and apartments</span>
+        </div>
+        <div class="card trust-item">
+          <strong>Commercial</strong>
+          <span>Offices, retail and branded spaces</span>
+        </div>
+        <div class="card trust-item">
+          <strong>Complete Scope</strong>
+          <span>From fit-out to finishing details</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container intro-grid">
+      <div class="card">
+        <h2 class="section-title">About Abdulla Carpentry EST</h2>
+        <p class="section-subtitle">
+          We provide interior fit-out, renovation, joinery and finishing services for clients looking for practical,
+          professionally managed, and well-finished spaces in Dubai.
+        </p>
+        <p>
+          Abdulla Carpentry EST works across residential and commercial sectors, supporting projects such as villa renovation,
+          apartment upgrades, office fit-out, retail interiors, salon fit-out, gym fit-out, painting, wall paneling, furniture making,
+          upholstery, kitchen remodeling and bathroom renovation. Our approach focuses on coordinated execution, clean results and
+          solutions tailored to project needs.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Why Clients Choose Us</h3>
+        <ul>
+          <li>Single point of coordination for multiple interior works</li>
+          <li>Practical site execution with attention to finishing</li>
+          <li>Custom carpentry and interior detailing support</li>
+          <li>Suitable for both home and commercial projects</li>
+          <li>Clear communication and scope-focused delivery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        A broad range of fit-out, renovation and finishing services for residential and commercial interiors in Dubai.
       </p>
+
+      <div class="service-grid">
+        <div class="card service-card">
+          <h3>Residential Renovation</h3>
+          <ul>
+            <li>Villa Renovation</li>
+            <li>Apartment Renovation</li>
+            <li>Living Room Renovation</li>
+            <li>Kitchen Remodeling</li>
+            <li>Bathroom Renovation</li>
+            <li>Home Gym Fit-Out</li>
+          </ul>
+        </div>
+
+        <div class="card service-card">
+          <h3>Commercial Fit-Out</h3>
+          <ul>
+            <li>Office Fit-Out</li>
+            <li>Retail Shop Fit-Out</li>
+            <li>Restaurant & Café Fit-Out</li>
+            <li>Salon Fit-Out</li>
+            <li>Gym Fit-Out</li>
+          </ul>
+        </div>
+
+        <div class="card service-card">
+          <h3>Specialist Interior Works</h3>
+          <ul>
+            <li>Custom Joinery & Carpentry</li>
+            <li>Furniture Making</li>
+            <li>Upholstery</li>
+            <li>Gypsum & Ceiling Works</li>
+            <li>Wall Paneling</li>
+            <li>Painting Services</li>
+            <li>Flooring Solutions</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Our Services</h2>
-    <ul>
-  <li>Villa Renovation</li>
-  <li>Apartment Renovation</li>
-  <li>Office Fit-Out</li>
-  <li>Retail Shop Fit-Out</li>
-  <li>Restaurant & Café Fit-Out</li>
-  <li>Salon Fit-Out</li>
-  <li>Gym Fit-Out</li>
-  <li>Home Gym Fit-Out</li>
-  <li>Kitchen Remodeling</li>
-  <li>Bathroom Renovation</li>
-  <li>Living Room Renovation</li>
-  <li>Custom Joinery & Carpentry</li>
-  <li>Furniture Making</li>
-  <li>Upholstery</li>
-  <li>Gypsum & Ceiling Works</li>
-  <li>Wall Paneling</li>
-  <li>Painting Services</li>
-  <li>Flooring Solutions</li>
-   </ul>
-  </div>
-
-    <div class="card">
-      <h2>Service Areas</h2>
-      <p>
-        We work across Dubai, including Business Bay, Dubai Marina, JVC, JLT, Downtown Dubai,
-        Arabian Ranches, Dubai Hills, and surrounding communities.
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Abdulla Carpentry Portfolio</h2>
+      <p class="section-subtitle">
+        Highlighted project categories and transformation types that reflect the range of interiors we support in Dubai.
       </p>
-    </div>
 
-    <div class="card">
-      <h2>Why Choose Us</h2>
-      <ul>
-        <li>One contractor for complete fit-out and renovation work</li>
-        <li>Professional supervision and clean finishing</li>
-        <li>Transparent pricing and clear timelines</li>
-        <li>Residential and commercial project experience</li>
-      </ul>
-    </div>
+      <div class="portfolio-grid">
+        <div class="card portfolio-card">
+          <div class="tag">Residential</div>
+          <h3>Villa Renovation Projects</h3>
+          <p>
+            Premium villa interiors, living spaces, kitchen upgrades, custom joinery, flooring and full renovation coordination.
+          </p>
+          <a class="mini-link" href="https://abdullacarpentryest.ae/" target="_blank">View Website →</a>
+        </div>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <p><strong>Website:</strong> <a href="https://abdullacarpentryest.ae/" target="_blank">abdullacarpentryest.ae</a></p>
-      <p><strong>Email:</strong> <a href="mailto:contact.abdullacarpentryest@gmail.com">contact.abdullacarpentryest@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+971565608073">056 560 8073</a></p>
+        <div class="card portfolio-card">
+          <div class="tag">Commercial</div>
+          <h3>Office & Retail Fit-Out</h3>
+          <p>
+            Functional commercial interiors designed for better workflow, customer experience, practical layouts and professional finishing.
+          </p>
+          <a class="mini-link" href="https://abdullacarpentryest.ae/" target="_blank">Explore More →</a>
+        </div>
+
+        <div class="card portfolio-card">
+          <div class="tag">Specialist Interiors</div>
+          <h3>Salon, Gym & Joinery Work</h3>
+          <p>
+            Interior execution for salons, fitness spaces, home gyms, carpentry, furniture making and detailed finishing work.
+          </p>
+          <a class="mini-link" href="https://abdullacarpentryest.ae/" target="_blank">See Services →</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section id="blogs">
+    <div class="container">
+      <h2 class="section-title">Read Our Blogs on Dubai Renovation</h2>
+      <p class="section-subtitle">
+        Useful content for homeowners, property owners and businesses planning renovation or fit-out work in Dubai.
+      </p>
+
+      <div class="blog-grid">
+        <div class="card featured-blog">
+          <div class="tag">Featured Blog</div>
+          <h3>Dubai Renovation Cost Guide 2026</h3>
+          <p>
+            A practical guide covering renovation costs, planning factors and budget expectations for Dubai projects.
+          </p>
+          <a class="btn btn-primary" href="https://abdullacarpentryest.ae/blog/dubai-renovation-cost-guide-2026/" target="_blank">Read the Full Guide</a>
+        </div>
+
+        <div class="card blog-card">
+          <div class="tag">More Resources</div>
+          <h3>Explore More Articles</h3>
+          <p>
+            You can use this microsite to direct visitors to your main website blog section, renovation insights and service-related content.
+          </p>
+          <a class="mini-link" href="https://abdullacarpentryest.ae/blog/" target="_blank">Visit Blog Section →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="container">
+      <h2 class="section-title">Service Areas in Dubai</h2>
+      <p class="section-subtitle">
+        We support clients across key residential and commercial communities in Dubai.
+      </p>
+
+      <div class="areas-grid">
+        <div class="card areas-card">
+          <h3>Popular Residential Areas</h3>
+          <ul>
+            <li>Arabian Ranches</li>
+            <li>Dubai Hills</li>
+            <li>JVC</li>
+            <li>JLT</li>
+            <li>Dubai Marina</li>
+            <li>Downtown Dubai</li>
+          </ul>
+        </div>
+
+        <div class="card areas-card">
+          <h3>Commercial & Mixed-Use Areas</h3>
+          <ul>
+            <li>Business Bay</li>
+            <li>Downtown Dubai</li>
+            <li>Dubai Marina</li>
+            <li>JLT</li>
+            <li>Retail and office districts across Dubai</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="card cta-box">
+        <div class="cta-grid">
+          <div>
+            <h2>Looking for Fit-Out or Renovation Services in Dubai?</h2>
+            <p>
+              Contact Abdulla Carpentry EST for practical interior solutions, custom carpentry, renovation support and commercial fit-out work.
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-item"><strong>Website:</strong> <a href="https://abdullacarpentryest.ae/" target="_blank">abdullacarpentryest.ae</a></div>
+            <div class="contact-item"><strong>Email:</strong> <a href="mailto:contact.abdullacarpentryest@gmail.com">contact.abdullacarpentryest@gmail.com</a></div>
+            <div class="contact-item"><strong>Phone:</strong> <a href="tel:+971565608073">056 560 8073</a></div>
+            <div class="contact-item"><strong>Blog:</strong> <a href="https://abdullacarpentryest.ae/blog/dubai-renovation-cost-guide-2026/" target="_blank">Dubai Renovation Cost Guide 2026</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    © Abdulla Carpentry EST. All rights reserved.
+    <div class="container footer-inner">
+      <div>© Abdulla Carpentry EST. Dubai Fit-Out & Renovation Microsite.</div>
+      <div class="footer-links">
+        <a href="https://abdullacarpentryest.ae/" target="_blank">Main Website</a>
+        <a href="https://abdullacarpentryest.ae/blog/" target="_blank">Blogs</a>
+        <a href="https://abdullacarpentryest.ae/blog/dubai-renovation-cost-guide-2026/" target="_blank">Cost Guide 2026</a>
+      </div>
+    </div>
   </footer>
 
 </body>
