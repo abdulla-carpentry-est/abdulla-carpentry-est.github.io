@@ -11,7 +11,6 @@
       --card: #ffffff;
       --text: #1b1b1b;
       --muted: #666666;
-      --dark: #0f0f10;
       --gold: #c8a96b;
       --gold-dark: #a98748;
       --border: #e8e1d6;
@@ -41,11 +40,6 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
@@ -69,25 +63,11 @@
       flex-wrap: wrap;
     }
 
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-logo {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: transparent;
-      padding: 2px;
-    }
-
     .brand {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: 0.3px;
+      color: #fff;
     }
 
     .brand span {
@@ -135,25 +115,6 @@
       font-size: 13px;
       margin-bottom: 18px;
       letter-spacing: 0.2px;
-    }
-
-    .hero-brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .hero-brand img {
-      width: 86px;
-      height: 86px;
-      object-fit: contain;
-    }
-
-    .hero-brand-text {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
     }
 
     h1 {
@@ -330,10 +291,6 @@
     .areas-card li {
       margin-bottom: 9px;
       color: #333;
-    }
-
-    .portfolio-grid {
-      grid-template-columns: repeat(3, 1fr);
     }
 
     .portfolio-card p,
@@ -610,7 +567,6 @@
       }
 
       .service-grid,
-      .portfolio-grid,
       .trust-grid,
       .areas-grid,
       .premium-portfolio-grid,
@@ -625,7 +581,6 @@
 
     @media (max-width: 720px) {
       .service-grid,
-      .portfolio-grid,
       .trust-grid,
       .areas-grid,
       .hero-points,
@@ -646,15 +601,6 @@
       .hero {
         padding: 70px 0 56px;
       }
-
-      .hero-brand {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .brand-wrap {
-        width: 100%;
-      }
     }
   </style>
 </head>
@@ -662,10 +608,7 @@
 
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="brand-wrap">
-        <img src="ace-logo.png" alt="ACE Logo" class="brand-logo">
-        <div class="brand">Abdulla Carpentry <span>EST</span></div>
-      </div>
+      <div class="brand">Abdulla Carpentry <span>EST</span></div>
       <div class="nav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -681,12 +624,6 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Dubai-Based Fit-Out & Renovation Company</div>
-
-        <div class="hero-brand">
-          <img src="ace-logo.png" alt="ACE Abdulla Carpentry EST Logo">
-          <div class="hero-brand-text">Abdulla Carpentry EST</div>
-        </div>
-
         <h1>Premium Interior Fit-Out, Renovation & Custom Carpentry Solutions</h1>
         <p>
           Abdulla Carpentry EST delivers residential and commercial interior solutions across Dubai,
